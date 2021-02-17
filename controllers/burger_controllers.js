@@ -1,7 +1,7 @@
-const burger = require('../models')
 const express = require("express");
 
 const router = express.Router();
+const burger = require('../models/burger');
 
 
 // create router for this app, export at end of file.
