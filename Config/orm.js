@@ -1,5 +1,4 @@
 const db = require('./connection');
-const tableName = burger;
 
 
 const orm = {
@@ -12,8 +11,8 @@ const orm = {
     },
 
     insertOne: function (values) {
-        let queryString = "INSERT INTO burger (burger_name, devoured) VALUES (?)";
-        db.query(queryString, [table, values], function (err, result){
+        let queryString = "INSERT INTO burger (burger_name) VALUES (??)";
+        db.query(queryString, [values], function (err, result){
             if (err) throw err;
             console.log(result);
         })
