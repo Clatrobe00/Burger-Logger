@@ -2,11 +2,11 @@ const db = require('./connection');
 
 
 const orm = {
-    selectAll: function () {
+    selectAll: function (cb) {
         let queryString = "SELECT * FROM burger"
         db.query(queryString, function (err, result){
             if (err) throw err;
-            console.log(result);
+            cb(result);
         })
     },
 

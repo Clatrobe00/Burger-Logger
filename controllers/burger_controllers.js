@@ -1,14 +1,20 @@
 const express = require("express");
 
+
+
 const router = express.Router();
+
 const burger = require('../models/burger');
-
-
 // create router for this app, export at end of file.
 
 router.get("/", function(req, res) {
-    burger.all(function(data) {
-        console.log('getting', data)
+    burger.all(function(burgers) {
+        //console.log('getting yo', burgers);
+        let hbsObj = {
+            burgers: burgers
+        }
+        console.log(hbsObj);
+        res.render('index', hbsObj);
     });
 });
 
@@ -27,4 +33,4 @@ router.put("/", function (req, res){
 
 
 
-module.exports = {router}
+module.exports = router;

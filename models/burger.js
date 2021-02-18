@@ -6,6 +6,7 @@ const orm = require('../Config/orm');
 const burgerModel = {
     all: function(cb) {
         orm.selectAll(function(res) {
+            let burgerNames = res.map(obj => obj.burger_name);
             cb(res);
         })
     },
