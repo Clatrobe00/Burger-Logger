@@ -3,22 +3,22 @@
 <h2>Burgers to be eaten:</h2>
 
 <ul>
-  {{#each burger_name}}
-    {{#unless devoured}}
+  {{#each burgerList}}
+      <li>{{this}}</li>
       {{!> cats/cat-block sleep=true}}
-    {{/unless}}
   {{/each}}
 </ul>
 
 <h2>Burgers that have been eaten!</h2>
 
-<ul>
+<!--<ul>
   {{#each burger_name}}
     {{#if devoured}}
        {{!> cats/cat-block sleep=false}}
     {{/if}}
   {{/each}}
 </ul>
+-->
 
 <h2>Add a Burger</h2>
 <form class="create-form">
