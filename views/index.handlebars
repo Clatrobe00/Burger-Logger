@@ -3,9 +3,16 @@
 <h2>Burgers to be eaten:</h2>
 
 <ul>
-  {{#each burgerList}}
-      <li>{{this}}</li>
-      {{!> cats/cat-block sleep=true}}
+  {{#each burgers}}
+  {{#unless devoured}}
+  <li>
+	  {{burger_name}}
+
+	    <button class="eat" data-id="{{id}}" devoured="{{devoured}}">
+		{{#if devoured}}Vomit Time!!!{{else}}Eat!{{/if}}
+	</button>
+</li>
+  {{/unless}}
   {{/each}}
 </ul>
 

@@ -10,9 +10,8 @@ const burger = require('../models/burger');
 router.get("/", function(req, res) {
     burger.all(function(burgers) {
         //console.log('getting yo', burgers);
-        const burgerList = burgers.map(obj => obj.burger_name);
         const hbsObj = {
-            burgerList: burgerList
+            burgers: burgers
         }
         res.render('index', hbsObj);
     });
