@@ -14,7 +14,7 @@ async function putHandler (event) {
 };
 
 function reloader () {
-    location.reload(true);
+    window.reload(true);
 }
 
 async function submitHandler () {
