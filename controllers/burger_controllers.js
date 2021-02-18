@@ -18,14 +18,13 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api", function (req, res){
-    console.log(req.body.name);
     burger.insert(req.body.name, function(result) {
         console.log('posting', result);
     });
 });
 
 router.put("/eat", function (req, res){
-    burger.update("Big Mac", function(result){
+    burger.update(req.body.name, function(result){
         console.log('updating', result);
     });
 });
