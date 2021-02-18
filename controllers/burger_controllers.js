@@ -17,14 +17,15 @@ router.get("/", function(req, res) {
     });
 });
 
-router.post("/api", function (req, res){
+router.post("/", function (req, res){
     burger.insert(req.body.name, function(result) {
         console.log('posting', result);
     });
 });
 
-router.put("/eat", function (req, res){
-    burger.update(req.body.name, function(result){
+router.put("/:id", function (req, res){
+    burger.update(req.params, function(result){
+        console.log(req.params);
         console.log('updating', result);
     });
 });

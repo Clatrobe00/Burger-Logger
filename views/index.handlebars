@@ -8,9 +8,7 @@
   <li>
 	  {{burger_name}}
 
-	    <button class="eat" data-id="{{id}}" devoured="{{devoured}}">
-		{{#if devoured}}Vomit Time!!!{{else}}Eat!{{/if}}
-	</button>
+	    <button class="eat" id="{{id}}" devoured="{{devoured}}">Eat!</button>
 </li>
   {{/unless}}
   {{/each}}
@@ -18,14 +16,16 @@
 
 <h2>Burgers that have been eaten!</h2>
 
-<!--<ul>
-  {{#each burger_name}}
+<ul>
+  {{#each burgers}}
     {{#if devoured}}
-       {{!> cats/cat-block sleep=false}}
+  <li>
+	  {{burger_name}}
+  </li>
     {{/if}}
   {{/each}}
 </ul>
--->
+
 
 <h2>Add a Burger</h2>
 <form class="create-form">
