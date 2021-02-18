@@ -11,8 +11,9 @@ const orm = {
     },
 
     insertOne: function (values) {
-        let queryString = "INSERT INTO burger (burger_name) VALUES (??)";
-        db.query(queryString, [values], function (err, result){
+        console.log(typeof(values));
+        let queryString = "INSERT INTO burger (burger_name) VALUES (?)";
+        db.query(queryString, values, function (err, result){
             if (err) throw err;
             console.log(result);
         })
