@@ -17,8 +17,9 @@ router.get("/", function(req, res) {
     });
 });
 
-router.post("/", function (req, res){
-    burger.insert(req.body.name, function(result) {
+router.post("/:burger_name", function (req, res){
+    burger.insert(req.params, function(result) {
+        console.log(req.params);
         console.log('posting', result);
     });
 });

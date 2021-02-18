@@ -11,7 +11,7 @@ const burgerModel = {
     },
     insert: function (values, cb) {
         console.log('controller value is', values);
-        orm.insertOne(values, function (res) {
+        orm.insertOne(values.burger_name, function (res) {
             cb(res);
         })
     },
