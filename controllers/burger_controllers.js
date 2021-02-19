@@ -22,6 +22,7 @@ router.post("/:burger_name", function (req, res){
         console.log(req.params);
         console.log('posting', result);
     });
+    res.redirect('/');
 });
 
 router.put("/:id", function (req, res){
@@ -29,6 +30,7 @@ router.put("/:id", function (req, res){
         console.log(req.params);
         console.log('updating', result);
     });
+    res.redirect('/');
 });
 
 

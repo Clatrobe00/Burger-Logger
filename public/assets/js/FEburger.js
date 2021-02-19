@@ -6,20 +6,20 @@ $(".newBurger").on('click', submitHandler);
 
 });
 
-async function putHandler (event) {
+function putHandler (event) {
     console.log(event.target.id);
     event.preventDefault();
-    await fetch(`/${event.target.id}`, {method: "PUT"});
+    fetch(`/${event.target.id}`, {method: "PUT"});
     reloader()
 };
 
 function reloader () {
-    window.reload(true);
+    window.location.reload(true);
 }
 
-async function submitHandler () {
+function submitHandler () {
     event.preventDefault();
     const str = $("#newBurg").val()
-    await fetch (`/${str}`, {method: "POST"})
+    fetch (`/${str}`, {method: "POST"})
     reloader();
 }
